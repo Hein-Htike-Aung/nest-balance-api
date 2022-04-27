@@ -1,0 +1,39 @@
+### Create Balnace 
+POST http://localhost:3000/balances
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDU0MDU3NSwiZXhwIjoxNjUwNTQxNDc1fQ.F5YiaZNiMS7RWSC9Q1dMBJNYgtAkHdWzvy44srOnYXM
+
+{
+    "name": "Shoes",
+    "amount": 3.22,
+    "date": "2022-12-12",
+    "description": "nice foods",
+    "balanceType": "EXPENSE",
+    "accountId": "0e7de2e6-bca5-4aea-adf3-3642a508eea9",
+    "categoryId": "e90cd565-28a6-4774-a96d-b0a5eec35928"
+}
+
+
+### Get ALL
+GET http://localhost:3000/balances?account&category&user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUzMDk1MCwiZXhwIjoxNjUwNTMxODUwfQ.nhZCGMvRlTwyWAeqTbOI5ZypYdzKe_KmzsGLEVpOWbE
+
+
+### find By id
+GET http://localhost:3000/balances/6fe966d4-4b99-45f1-81b7-4630eaef356e?account&category&user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUzMDk1MCwiZXhwIjoxNjUwNTMxODUwfQ.nhZCGMvRlTwyWAeqTbOI5ZypYdzKe_KmzsGLEVpOWbE
+
+
+### update Balance
+PATCH http://localhost:3000/balances/6fe966d4-4b99-45f1-81b7-4630eaef356e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUzMDk1MCwiZXhwIjoxNjUwNTMxODUwfQ.nhZCGMvRlTwyWAeqTbOI5ZypYdzKe_KmzsGLEVpOWbE
+
+{
+    "name": "Soap"
+}
+
+
+### delete Balance
+DELETE http://localhost:3000/balances/444217af-a651-4667-b426-ae688b41b88
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDU0MDA3NCwiZXhwIjoxNjUwNTQwOTc0fQ.ozPg8T823r_wYcIn31obdXg6C4Z1hxURgW_2vA0pgrs

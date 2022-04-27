@@ -1,0 +1,67 @@
+### signup
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "name": "John",
+    "email": "admin2@gmail.com",
+    "password": "admin"
+}
+
+
+### signin
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin"
+}
+
+### logout
+POST http://localhost:3000/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDJhM2NiNC0zYmJiLTQwOTQtOTA2Zi02YjU3ZGQ4MTcxMDkiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDQ2NjQ3MCwiZXhwIjoxNjUwNDY3MzcwfQ.r2LZnqD22QAaejZHIsym00vsNpvn2TnMRWP28sCalQI
+
+
+### refreshToken 
+POST http://localhost:3000/auth/refresh
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDcxNDY1NCwiZXhwIjoxNjUwODAxMDU0fQ.4B1bGa0WzlhGLDzw459f0L-QzrnIreDVU0_Q6amzEAY
+
+
+
+### Me
+GET http://localhost:3000/auth/me
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDYwODY5OSwiZXhwIjoxNjUwNjA5NTk5fQ.GjkIlna7dpL6EKTdc6DgK1GP8GK0GdALx-A8LeS6e8o
+
+
+### change credentail
+POST http://localhost:3000/auth/change-credential
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MjBkYmE2NS1mOTlhLTRkNGYtODI3ZS05YTJjOWIzZDBkZDEiLCJlbWFpbCI6ImthcmluYUBnbWFpbC5jb20iLCJpYXQiOjE2NTA4NDkxNTMsImV4cCI6MTY1MDg1MDA1M30._5XgvPHvZkIaDZJafTpnZ6KTqaLf8oONge1y1_89k3M
+
+{
+    "name": "ningning",
+    "email": "ningning@gmail.com",
+    "oldPassword": "admin",
+    "newPassword": "admin1"
+}
+
+
+### Get All User 
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUwNDA2MywiZXhwIjoxNjUwNTA0OTYzfQ.jWp-NS5ZEY1TMoCzlk7v03XSpktmhzWAfd4ClNtUxEs
+
+
+### Find User By Id
+GET http://localhost:3000/users/6ac24101-259f-4b06-8b28-122bc1c9cf0d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUwNDA2MywiZXhwIjoxNjUwNTA0OTYzfQ.jWp-NS5ZEY1TMoCzlk7v03XSpktmhzWAfd4ClNtUxEs
+
+
+### Update User
+PATCH http://localhost:3000/users/6ac24101-259f-4b06-8b28-122bc1c9cf0d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUwNDA2MywiZXhwIjoxNjUwNTA0OTYzfQ.jWp-NS5ZEY1TMoCzlk7v03XSpktmhzWAfd4ClNtUxEs
+
+{
+    "name": "Karina"
+}

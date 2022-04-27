@@ -1,0 +1,36 @@
+### Create Category
+POST http://localhost:3000/categories
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDc2ODI4MSwiZXhwIjoxNjUwNzY5MTgxfQ.DNqpJ-hVKX33_hmF3pbvswZyCZ34kACOqNCLrVFrpdI
+
+{
+    "name": "T Shirtt",
+    "type": "EXPENSE",
+    "parentCategoryId": "e90cd565-28a6-4774-a96d-b0a5eec35928"
+}
+
+
+### Get all Categories for current User
+GET http://localhost:3000/categories?balances
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUxNzIyMywiZXhwIjoxNjUwNTE4MTIzfQ.5xurSotxIP_pH5UdTeTntAhrY4TNF7vokRf7eVQRRRw
+
+
+### find by id
+GET http://localhost:3000/categories/e90cd565-28a6-4774-a96d-b0a5eec3592
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDcxMjUzNSwiZXhwIjoxNjUwNzEzNDM1fQ.YYM6mcv29Ts-K4O1rC9QNFLE3BWS8mQHXP3m4Z7Rq5s
+
+
+### update Category
+PATCH http://localhost:3000/categories/0210251e-2835-42fb-995e-c554d730e822
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDc2NTUyMSwiZXhwIjoxNjUwNzY2NDIxfQ.ueG_V8vvy_U-_Wff_T9SWngnXigdIcR6Ep719uqZGic
+
+{
+    "name": "Sneaker",
+    "parentCategoryId": "e90cd565-28a6-4774-a96d-b0a5eec35928"
+}
+
+
+### delete Category
+DELETE http://localhost:3000/categories/e90cd565-28a6-4774-a96d-b0a5eec35928
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDU0MDk3NSwiZXhwIjoxNjUwNTQxODc1fQ.CavcF-1FaWr7VBCtbVRzg0QFbELUWvSnmGrWLyUPuxk

@@ -1,0 +1,34 @@
+### Create Account
+POST http://localhost:3000/accounts
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDU0NTQ3MywiZXhwIjoxNjUwNTQ2MzczfQ.QEKJJQDAFaIxy5SjGNQpRtH6cFcjsNrgLscbu0jVXyg
+
+{
+    "name": "Paypal",
+    "openingBalance": 0,
+    "description": "Visa Desc"
+}
+
+
+### Get all currentUser Accounts
+GET http://localhost:3000/accounts?balances
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUxNzE2OSwiZXhwIjoxNjUwNTE4MDY5fQ.nByegxuQxN2ZyQNGGFbAvAapYoSdSDOtE-m160DWKLk
+
+
+### find by id
+GET http://localhost:3000/accounts/0a23cebe-d268-4edc-9b25-33e181a86960?balances
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDUzMDM0OSwiZXhwIjoxNjUwNTMxMjQ5fQ.Os64cHtYemfV96_y7q4BpmDvPfmUnECsRFgMAKC7ogg
+
+
+### update Account
+PATCH  http://localhost:3000/accounts/db7b1a8a-79c8-423d-9e49-574377ee47fa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDk2NDU5OSwiZXhwIjoxNjUwOTY1NDk5fQ.0auDiAZYx50SaoABsLyJVCL-RBcIQwSBKp9bOTDROvw
+
+{
+    "openingBalance": -100
+}
+
+### Delete Account 
+DELETE http://localhost:3000/accounts/0e7de2e6-bca5-4aea-adf3-3642a508eea9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWMyNDEwMS0yNTlmLTRiMDYtOGIyOC0xMjJiYzFjOWNmMGQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY1MDU0MTU0NCwiZXhwIjoxNjUwNTQyNDQ0fQ.S2rSEt3lY5gS2lf0jHvPLcA5MCcbuna-3W32XNjZv90

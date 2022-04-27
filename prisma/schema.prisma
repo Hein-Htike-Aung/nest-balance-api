@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  email String @unique
+  password String
+  hashRt String?
+  name String?
+
+  categories Category[]
+  balances Balance[]
+  accounts Account[]
+
+}
+
+model Category {
+  @@map("categories")
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  name String @unique
+  type String
+  description String?
+
+  balances Balance[]
+
+  // One to Many SubRelationship
+  parentCategoryId String?
+  parentCategory Category? @relation("subcategories", fields: [parentCategoryId], references: [id])
+  subcategories Category[] @relation("subcategories")
+
+  userId String
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Balance {
+  @@map("balance")
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  name String
+  amount Float
+  date DateTime
+  description String?
+  balanceType String
+
+  // Many to one
+  accountId String
+  account Account @relation(fields: [accountId], references: [id])
+
+  // Many to One SubRelationship
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id])
+
+  userId String
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Account {
+  @@map("accounts")
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  name String @unique
+  openingBalance Int
+  description String?
+
+  // One to Many
+  balances Balance[]
+
+  userId String
+  user User @relation(fields: [userId], references: [id])
+}
